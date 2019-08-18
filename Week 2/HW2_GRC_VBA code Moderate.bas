@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+Attribute VB_Name = "Module11"
 
 Sub TotalVolume()
    
@@ -64,7 +64,9 @@ Sub TotalVolume()
                 End If
             
             YearWkst.Cells(ResultRow - 1, 11).NumberFormat = "0.00"
-            PercentChange = YearlyChange / OpenPrice * 100
+                If OpenPrice > 0 Then
+                    PercentChange = YearlyChange / OpenPrice * 100
+                End If
             YearWkst.Cells(ResultRow - 1, 11).Value = PercentChange
             
             
